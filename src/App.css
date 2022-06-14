@@ -1,38 +1,44 @@
-.App {
-  text-align: center;
+
+html {
+  background-color: #303030;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App-Instructions {
+  font-size: calc(var(--app-prompt-padding) * 0.8);
+  background-color: #808080;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.App-Card {
+  /* Horizontal */
+  --app-prompt-padding: 5vh;
+  --app-prompt-vertical-margin: 16vh;
+  --app-prompt-horizontal-margin: 16vw;
+  --app-prompt-border: 2px;
+  --app-prompt-height: calc(100vh - 2*(var(--app-prompt-vertical-margin) + var(--app-prompt-border) + var(--app-prompt-padding)));
+  --app-prompt-width: calc(100vw - 2*(var(--app-prompt-horizontal-margin) + var(--app-prompt-border) + var(--app-prompt-padding)));
+
+  padding: var(--app-prompt-padding);
+  margin-top: var(--app-prompt-vertical-margin);
+  height: var(--app-prompt-height);
+
+  width: var(--app-prompt-width);
+  margin-left: var(--app-prompt-horizontal-margin);
+  margin-right: var(--app-prompt-horizontal-margin);
+
+  border: var(--app-prompt-border) solid black;
+
+  object-fit: scale-down;
+} 
+
+.App-Prompt {
+  font-size: var(--app-prompt-height);
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (max-device-aspect-ratio: 1/1), (max-aspect-ratio: 1/1) {
+  /* Vertical */
+  .App-Card {
+    --app-prompt-padding: 5vw;
+    --app-prompt-vertical-margin: 33vh;
+    --app-prompt-horizontal-margin: 8vw;
   }
 }
